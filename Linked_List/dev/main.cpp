@@ -1,5 +1,4 @@
-﻿#include <iostream>
-
+#include <iostream>
 
 using namespace std;
 
@@ -9,6 +8,7 @@ struct Node {
 	Node* next = nullptr;
 	Node* prev = nullptr;
 };
+
 
 struct DoublyLinkedList {
 	Node* first = nullptr;
@@ -69,7 +69,6 @@ struct DoublyLinkedList {
 	};
 
 	////////////////////////////////////////////////////////
-
 
 
 
@@ -164,7 +163,7 @@ int main() {
 	list.print();
 	list.print_reverse();
 
-	//cout << list.first->next->value << endl;
+
 
     //list.insert_after(0, 20);
 
@@ -175,16 +174,4 @@ int main() {
                                                                                 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,79 +1,53 @@
-пїњ#include <iostream>
+#include <iostream>
+//#include <forward_list>
+
 
 
 using namespace std;
 
 
+
+//void print_array(int n, int array[]) {
+//
+//    for (int i = 0; i < n; i++) {
+//        std::cout << array[i] << " ";
+//    }
+//    std::cout << std::endl;
+//}
+
+
+
+// (необ€зательно)
+// можно добавить шаблон, чтоб не работать только с  int
+//template<typename Type> поставить перед struct Node
+// тогда надо мен€ть Node на Node<Type>
+
+
 struct Node {
 	int value = 0;
 	Node* next = nullptr;
-	Node* prev = nullptr;
 };
 
-struct DoublyLinkedList {
+struct List {
 	Node* first = nullptr;
-	Node* last = nullptr;
 	int size_ = 0;
-
 
 	void push_front(const int value) {
 		Node* newNode = new Node;
 		newNode->value = value;
 		newNode->next = first;
-
-		if (size_ == 0) {
-			last = newNode;
-		}
-		else {
-			first->prev = newNode;
-		}
 		first = newNode;
 		size_++;
-	}
-
-
-	void push_back(const int value) {
-		Node* newNode = new Node;
-		newNode->value = value;
-		newNode->prev = last;
-
-		if (size_ == 0) {
-			first = newNode;
-		}
-		else {
-			last->next= newNode;
-		}
-		last = newNode;
-		size_++;
-
 	}
 
 	void print() {
 		Node* curNode = first;
 		while (!(curNode == nullptr))
 		{
-			std::cout << curNode->value << " ";
+			std::cout << curNode->value << "\n";
 			curNode = curNode->next;
 		}
-		cout << endl;
 	};
-
-	void print_reverse() {
-		Node* curNode = last;
-		while (!(curNode == nullptr))
-		{
-			std::cout << curNode->value << " ";
-			curNode = curNode->prev;
-		}
-		cout << endl;
-	};
-
-	////////////////////////////////////////////////////////
-
-
-
-
-
 
 	void clear() {
 		while (first != nullptr) {
@@ -143,36 +117,56 @@ struct DoublyLinkedList {
 
 
 
+int main1() {
+
+
+    {
+        cout << "Own list" << endl;
+
+        List list;
+
+        list.push_front(10);
+        list.push_front(5);
+        list.push_front(-19);
+
+        list.insert_after(0, 20);
+
+        cout << endl;
+        for (int i = 0; i < 4; i++) {
+            cout << list[i] << endl;
+        }
+
+        list.print();
+
+        cout << "List after clear:" << endl;
+        list.clear();
+        list.print();
+    }
+
+
+    //{
+    //    // Library linked list
+
+    //    cout << endl;
+    //    forward_list<int> list;
+
+
+    //    list.push_front(10);
+    //    list.push_front(5);
+    //    list.push_front(-19);
+
+    //    list.pop_front();
+
+    //    for (auto i : list) {
+    //        cout << i << " ";
+    //    }
+
+    //}
 
 
 
 
-int main() {
-   
-    DoublyLinkedList list;
 
-    list.push_back(10);
-	list.push_back(5);
-    list.push_back(7);
-    list.push_back(-19);
-
-	//list.push_front(10);
-	//list.push_front(5);
-	//list.push_front(7);
-	//list.push_front(-19);
-
-	list.print();
-	list.print_reverse();
-
-	//cout << list.first->next->value << endl;
-
-    //list.insert_after(0, 20);
-
-    //list.print();
-	//cout << "Size: " << list.size();
-
-	//list.print_reverse();
-                                                                                
     return 0;
 }
 
