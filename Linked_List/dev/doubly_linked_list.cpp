@@ -98,13 +98,13 @@ bool DoublyLinkedList::is_empty() {
 }
 
 
-Node* DoublyLinkedList::operator[] (const int index) {
+int DoublyLinkedList::operator[] (const int index) {
 	Node* curNode = first;
 	int pos = 0;
 	while (curNode != nullptr)
 	{
 		if (index == pos) {
-			return curNode;
+			return curNode->value;
 		}
 		pos++;
 		curNode = curNode->next;

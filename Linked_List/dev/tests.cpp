@@ -87,8 +87,8 @@ void test_indexing() {
 	std::cout << "Size: " << list.size() << std::endl;
 
 	std::cout << std::endl;
-	std::cout << "list[0] = " << list[0]->value << std::endl;
-	std::cout << "list[1] = " << list[1]->value << std::endl;
+	std::cout << "list[0] = " << list[0] << std::endl;
+	std::cout << "list[1] = " << list[1] << std::endl;
 	//std::cout << "list[1] = " << list[0]->next->value << std::endl;
 
 	//for (int i = 0; i < list.size(); i++) {
@@ -136,7 +136,7 @@ void test_erase() {
 	std::cout << "Size: " << list.size() << std::endl << std::endl;
 
 	int pos = 2;  // position of element to delete
-	std::cout << "Deleted element: " << list[pos]->value << std::endl;
+	std::cout << "Deleted element: " << list[pos] << std::endl;
 	list.erase(pos);
 	std::cout << "New list: ";
 	list.print();
@@ -158,9 +158,9 @@ void test_swap() {
 	list.print();
 	std::cout << "Size: " << list.size() << std::endl << std::endl;
 
-	int pos1 = 2;
-	int pos2 = 2;
-	std::cout << "Swap elements " << list[pos1]->value << " and " << list[pos2]->value << std::endl;
+	int pos1 = 1;
+	int pos2 = 3;
+	std::cout << "Swap elements " << list[pos1] << " and " << list[pos2] << std::endl;
 	list.swap(pos1, pos2);
 	std::cout << "New list: ";
 	list.print();

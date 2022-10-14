@@ -53,8 +53,10 @@ struct DoublyLinkedList {
 	**/
 	bool is_empty();
 
-
-	Node* operator[] (const int index);
+	/**
+	* Перегрузка оператора индексации
+	**/
+	int operator[] (const int index);
 
 	/**
 	* Вставка перед элементом
