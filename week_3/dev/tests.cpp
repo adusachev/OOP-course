@@ -6,13 +6,13 @@
 
 void test_constructor() {
 
-    String s1("my string");  // конструктор 1
+    String s1("my string");  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ 1
     s1.print_info();
 
-    String s2(15, 'a');  // конструктор 2
+    String s2(15, 'a');  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ 2
     s2.print_info();
 
-    s1 = String(s2);  // конструктор копирования
+    s1 = String(s2);  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     s1.print_info();
 }
 
@@ -25,7 +25,7 @@ void test_swap() {
     s2.print_info();
 
 
-    s1.swap(s2);  // меняем местами s1 и s2
+    s1.swap(s2);  // РјРµРЅСЏРµРј РјРµСЃС‚Р°РјРё s1 Рё s2
     s1.print_info();
     s2.print_info();
 }
@@ -38,7 +38,7 @@ void test_ravno() {
     String s2;
     s2.print_info();
 
-    s2 = s1;  // присваиваем строке s2 строку s1
+    s2 = s1;  // РїСЂРёСЃРІР°РёРІР°РµРј СЃС‚СЂРѕРєРµ s2 СЃС‚СЂРѕРєСѓ s1
     s2.print_info();
 }
 
@@ -50,6 +50,6 @@ void test_append() {
     String s2("World");
     s2.print_info();
 
-    s1.append(s2);  // к строке s1 добавляем строку s2
+    s1.append(s2);  // Рє СЃС‚СЂРѕРєРµ s1 РґРѕР±Р°РІР»СЏРµРј СЃС‚СЂРѕРєСѓ s2
     s1.print_info();
 }
